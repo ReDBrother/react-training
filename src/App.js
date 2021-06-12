@@ -6,6 +6,7 @@ import './App.css';
 
 import Counters from './first/Counters';
 import FileManager from './second/FileManager';
+import Buttons from './first/practice/Buttons';
 
 const Home = () => {
   return (<>
@@ -23,6 +24,13 @@ const Home = () => {
         <Button variant="primary"><NavLink className="text-white" to="/file-manager">Show</NavLink></Button>
       </Card.Body>
     </Card>
+    <Card>
+      <Card.Body>
+        <Card.Title>Practices React</Card.Title>
+        <Card.Text>Practice</Card.Text>
+        <Button variant="primary"><NavLink className="text-white" to="/buttons">Show Buttons Practice</NavLink></Button>
+      </Card.Body>
+    </Card>
   </>);
 };
 
@@ -36,6 +44,7 @@ function App() {
           <Route exact path="/" render={(props) => <Home {...props} />} />
           <Route exact path="/counters" render={(props) => <Counters {...props} />} />
           <Route exact path="/file-manager" render={(props) => <FileManager {...props}/>} />
+          <Route exact path="/buttons" render={() => <Buttons count={3} />} />
         </Switch>
       </main>
     </BrowserRouter>
